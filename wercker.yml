@@ -3,11 +3,7 @@ build:
   steps:
     - script:
         code: |
-          if [[ $WERCKER_GIT_BRANCH == "gh-pages" ]]; then
-            success "nothing to do on $WERCKER_GIT_BRANCH branch"
-          else
-            Rscript render.R
-          fi
+          Rscript render.R
 ghpages:
   steps:
     - lukevivier/gh-pages:
