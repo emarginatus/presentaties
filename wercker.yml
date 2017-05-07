@@ -6,7 +6,7 @@ build:
           if [[ $WERCKER_GIT_BRANCH == "gh-pages" ]]; then
             success "nothing to do on $WERCKER_GIT_BRANCH branch"
           else
-            Rscript -e "render.R"
+            Rscript render.R
           fi
 ghpages:
   steps:
