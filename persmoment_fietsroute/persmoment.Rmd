@@ -13,13 +13,13 @@ output:
 ## Sprekers
 
 - Vleermuizenwerkgroep Myotis
-  - inleiding : Christine Goessens
-  - voorstellen infoborden : Thierry Onkelinx
-  - voorstellen Erfgoed app : Jan Van Schepdael
+    - inleiding : Christine Goessens
+    - voorstellen infoborden : Thierry Onkelinx
+    - voorstellen Erfgoed app : Jan Van Schepdael
 - Agentschap voor Natuur en Bos
-  - Pierre Kestemont
+    - Pierre Kestemont
 - Stad Halle
-  - burgemeester Dirk Pieters
+    - burgemeester Dirk Pieters
 
 ## Doel van vleermuizenwerkgroep Myotis
 
