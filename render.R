@@ -2,6 +2,7 @@ basedir <- getwd()
 if (!file_test("-d", "_site")) {
   dir.create("_site")
 }
+file.copy("wercker.yml", "_site")
 to_do <- list.files(
   path = basedir,
   pattern = "*.Rmd",
