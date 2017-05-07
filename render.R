@@ -1,6 +1,7 @@
 basedir <- getwd()
 if (!file_test("-d", "_site")) {
   dir.create("_site")
+  dir.create("_site/images")
 }
 to_do <- list.files(
   path = basedir,
@@ -14,6 +15,11 @@ for (filename in to_do) {
   file.copy(
     from = gsub("\\.Rmd", "\\.html", basename(filename)),
     to = paste0(basedir, "/_site"),
+    overwrite = TRUE
+  )
+  file.copy(
+    from = paste0(basename(filename), "/images"),
+    to = paste0(basedir, "/_site/images"),
     overwrite = TRUE
   )
 }
