@@ -1,0 +1,15 @@
+box: emarginatus/render_website
+build:
+  steps:
+    - script:
+        code: |
+          if [[ $WERCKER_GIT_BRANCH == "gh-pages" ]]; then
+            success "nothing to do on $WERCKER_GIT_BRANCH branch"
+          else
+            Rscript -e "render.R"
+          fi
+ghpages:
+  steps:
+    - lukevivier/gh-pages:
+       token: $GITHUB_TOKEN
+       basedir: _site
