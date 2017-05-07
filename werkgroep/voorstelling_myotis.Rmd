@@ -9,7 +9,7 @@ output:
       autoSlide: 20000
 ---
 
-# Vleermuizen {data-background="logo.svg" data-background-size="auto 80%" data-background-position="bottom"}
+# Vleermuizen {data-background="images/logo.svg" data-background-size="auto 80%" data-background-position="bottom"}
 
 ## De fabeltjes
 
@@ -44,7 +44,7 @@ output:
 ![](dwergvleermuis_vertraagd.mp3)
 
 
-# Vleermuizen van bij ons {data-background="logo.svg" data-background-size="auto 80%" data-background-position="bottom"}
+# Vleermuizen van bij ons {data-background="images/logo.svg" data-background-size="auto 80%" data-background-position="bottom"}
 
 ## Gewone dwergvleermuis
 
@@ -74,7 +74,7 @@ output:
 
 ![](Rosse_vleermuis_HugoWillocx.jpeg)
 
-# De werkgroep {data-background="logo.svg" data-background-size="auto 80%" data-background-position="bottom"}
+# De werkgroep {data-background="images/logo.svg" data-background-size="auto 80%" data-background-position="bottom"}
 
 ## Wie zijn we
 
@@ -93,7 +93,7 @@ output:
 
 ![](inrichten1.jpg)
 
-# Vleermuizenfietsroute  {data-background="logo.svg" data-background-size="auto 80%" data-background-position="bottom"}
+# Vleermuizenfietsroute  {data-background="images/logo.svg" data-background-size="auto 80%" data-background-position="bottom"}
 
 ## Kom in contact met de wondere wereld van vleermuizen
 
@@ -116,7 +116,7 @@ output:
 - [GPX track](http://batbike.be/route/route.gpx) beschikbaar via www.batbike.be
 
 
-# Publieksactiviteiten {data-background="logo.svg" data-background-size="auto 80%" data-background-position="bottom"}
+# Publieksactiviteiten {data-background="images/logo.svg" data-background-size="auto 80%" data-background-position="bottom"}
 
 ## Inhuldiging vleermuizenfietsroute
 

@@ -8,7 +8,7 @@ output:
     theme: sky
 ---
 
-# Inleiding {data-background="wegwijzer.svg" data-background-size="auto 80%" data-background-position="bottom"}
+# Inleiding {data-background="images/wegwijzer.svg" data-background-size="auto 80%" data-background-position="bottom"}
 
 ## Sprekers
 
@@ -47,11 +47,11 @@ leven van vleermuizen
 - alle vleermuizen genieten wettelijke bescherming door deze Europese richtlijn
 - **bestaat 25 jaar op 21 mei 2017**
 
-# Concept {data-background="wegwijzer.svg" data-background-size="auto 80%" data-background-position="bottom"}
+# Concept {data-background="images/wegwijzer.svg" data-background-size="auto 80%" data-background-position="bottom"}
 
 ## Vrije fietstocht
 
-- <img src="wegwijzer.svg" style="float: right;">20 km familievriendelijke fietswegen
+- <img src="images/wegwijzer.svg" style="float: right;">20 km familievriendelijke fietswegen
 - start en aankomst station Halle
 - 8 informatiepunten
 - volledig bewegwijzerd
@@ -88,7 +88,7 @@ leven van vleermuizen
     - toont relevante informatie voor de locatie
     - virtueel bezoek binnen in vleermuisobjecten
 
-# Infopunten {data-background="wegwijzer.svg" data-background-size="auto 80%" data-background-position="bottom"}
+# Infopunten {data-background="images/wegwijzer.svg" data-background-size="auto 80%" data-background-position="bottom"}
 
 ## Station Halle
 
@@ -156,7 +156,7 @@ leven van vleermuizen
 <img src="../werkgroep/laatvlieger_Hugo_Willocx.jpeg" style="float: center;height: 400px;">
 
 
-# Samenwerking {data-background="wegwijzer.svg" data-background-size="auto 80%" data-background-position="bottom"}
+# Samenwerking {data-background="images/wegwijzer.svg" data-background-size="auto 80%" data-background-position="bottom"}
 
 ## De vleermuizenfietsroute
 
