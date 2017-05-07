@@ -18,7 +18,7 @@ for (filename in to_do) {
     overwrite = TRUE
   )
   file.copy(
-    from = paste0(basename(filename), "/images"),
+    from = list.files(paste0(dirname(filename), "/images"), full.names = TRUE),
     to = paste0(basedir, "/_site/images"),
     overwrite = TRUE
   )
