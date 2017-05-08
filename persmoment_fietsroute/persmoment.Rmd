@@ -72,7 +72,7 @@ leven van vleermuizen
 
 - <img src="images/wegwijzer.svg" style="float: right;">20 km familievriendelijke fietswegen
 - start en aankomst station Halle
-- 8 informatiepunten
+- 7 + 1 infopunten
 - volledig bewegwijzerd
 - [Toerisme Halle](http://www.toerisme-pajottenland.be) verdeelt
     - gratis gedrukte folder met route
@@ -210,11 +210,11 @@ leaflet() %>%
 ## Infopunten
 
 - infobord met beknopte informatie
-- [www.batbike.be](http://www.batbike.be) biedt meer uitgebreidde informatie
+- [www.batbike.be](http://www.batbike.be) biedt meer uitgebreide informatie
     - over een aspect van vleermuizen
     - over geschiedenis van de locatie
     - de link tussen vleermuizen en de locatie
-    - informatie over een soort vleermuis
+    - informatie over vleermuizensoort
 - extras via de [erfgoedapp](http://erfgoedapp.be/)
     - toont relevante informatie voor de locatie
     - virtueel bezoek binnen in vleermuisobjecten
@@ -228,6 +228,7 @@ leaflet() %>%
     - overzicht route
     - bewegwijzering
     - beschikbaarheid folder
+    - [batbike.be](http://www.batbike.be)
     - [erfgoedapp](http://erfgoedapp.be/)
 
 ## Malakoffdomein
@@ -236,15 +237,17 @@ leaflet() %>%
 - geschiedenis van het Malakoffdomein
 - vleermuis in detail: watervleermuis
 
-<img src="../werkgroep/watervleermuis_kolonie_HugoWillocx.jpeg" style="float: center;height: 400px;">
+<div style="font-size: 30%;"><img src="../werkgroep/watervleermuis_kolonie_HugoWillocx.jpeg" style="float: center;height: 400px;"><br>
+Foto: Hugo Willocx</div>
 
 ## Kasteelpark Lembeek
 
 - wat eten vleermuizen
-- geschiendenis van het kasteelpark
+- geschiedenis van het kasteelpark
 - vleermuis in detail: franjestaart
 
-<img src="../werkgroep/Franjestaart_in_vlucht1_HugoWillocx.jpeg" style="float: center;height: 400px;">
+<div style="font-size: 30%;"><img src="../werkgroep/Franjestaart_in_vlucht1_HugoWillocx.jpeg" style="float: center;height: 400px;"><br>
+Foto: Hugo Willocx</div>
 
 ## Oude spoorbedding
 
@@ -252,7 +255,8 @@ leaflet() %>%
 - geschiedenis van de spoorbedding
 - vleermuis in detail: gewone grootoor
 
-<img src="../werkgroep/Gewone_grootoor_DavidGalens.jpeg" style="float: center;height: 400px;">
+<div style="font-size: 30%;"><img src="../werkgroep/Gewone_grootoor_DavidGalens.jpeg" style="float: center;height: 400px;"><br>
+Foto: David Galens</div>
 
 ## Bunker Colruyt Group
 
@@ -260,7 +264,8 @@ leaflet() %>%
 - camouflage van de bunkers
 - vleermuis in detail: gewone dwergvleermuis
 
-<img src="../werkgroep/Gewone_Dwergvleermuis_DavidHerman.jpeg" style="float: center;height: 400px;">
+<div style="font-size: 30%;"><img src="../werkgroep/Gewone_Dwergvleermuis_DavidHerman.jpeg" style="float: center;height: 400px;"><br>
+Foto: David Herman</div>
 
 ## Bunker kerkhof
 
@@ -268,7 +273,8 @@ leaflet() %>%
 - bunkers als winterverblijfplaatsen voor vleermuizen
 - vleermuis in detail: gewone baardvleermuis
 
-<img src="../werkgroep/Baardvleermuis_HugoWillocx.jpeg" style="float: center;height: 400px;">
+<div style="font-size: 30%;"><img src="../werkgroep/Baardvleermuis_HugoWillocx.jpeg" style="float: center;height: 400px;"><br>
+Foto: Hugo Willocx</div>
 
 ## Bunkers Stroppen
 
@@ -276,7 +282,8 @@ leaflet() %>%
 - geschiedenis van de bunkerlinie rond Halle
 - vleermuis in detail: rosse vleermuis
 
-<img src="../werkgroep/Rosse_vleermuis_HugoWillocx.jpeg" style="float: center;height: 400px;">
+<div style="font-size: 30%;"><img src="../werkgroep/Rosse_vleermuis_HugoWillocx.jpeg" style="float: center;height: 400px;"><br>
+Foto: Hugo Willocx</div>
 
 ## Sint-Vincentiuskerk
 
@@ -284,7 +291,8 @@ leaflet() %>%
 - geschiedenis van de kerk + inrichting voor vleermuizen
 - vleermuis in detail: laatvlieger
 
-<img src="../werkgroep/laatvlieger_Hugo_Willocx.jpeg" style="float: center;height: 400px;">
+<div style="font-size: 30%;"><img src="../werkgroep/laatvlieger_Hugo_Willocx.jpeg" style="float: center;height: 400px;"><br>
+Foto: Hugo Willocx</div>
 
 
 # Samenwerking {data-background="images/wegwijzer.svg" data-background-size="auto 80%" data-background-position="bottom"}
