@@ -6,7 +6,26 @@ output:
   revealjs::revealjs_presentation:
     transition: concave
     theme: sky
+    css: "images/leaflet_reveal.css"
 ---
+
+```{r load_packages, include = FALSE}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+library(htmlwidgets)
+setWidgetIdSeed(1)
+library(leaflet)
+library(tibble)
+library(rgdal)
+library(readr)
+library(dplyr)
+library(tidyr)
+```
+
 
 # Inleiding {data-background="images/wegwijzer.svg" data-background-size="auto 80%" data-background-position="bottom"}
 
@@ -62,9 +81,121 @@ leven van vleermuizen
     - interactieve kaart
     - GPX tracks
 
-## Kaart
+## Aanbevolen route
 
-![](../werkgroep/aanbevolen-1.png)
+```{r map_data, results='hide'}
+route_segment <- readOGR("https://raw.githubusercontent.com/emarginatus/batbike/master/route/route.geojson", "OGRGeoJSON", verbose = FALSE)
+knooppunt <- readOGR("https://raw.githubusercontent.com/emarginatus/batbike/master/route/knooppunt.geojson", "OGRGeoJSON", verbose = FALSE)
+basis <- read_csv("https://raw.githubusercontent.com/emarginatus/batbike/master/route/route.csv") %>%
+  group_by(route) %>%
+  mutate(
+    vorige = lag(knoop),
+    segment = sprintf("%i-%i", pmin(knoop, vorige), pmax(knoop, vorige)),
+    omkeren = vorige > knoop,
+    id = row_number()
+  ) %>%
+  filter(!is.na(vorige)) %>%
+  select(route, id, segment, omkeren) %>%
+  rowwise() %>%
+  mutate(
+    segment = route_segment[route_segment$segment == segment, ] %>%
+      coordinates() %>%
+      "[["(1) %>%
+      as.data.frame() %>%
+      list()
+  ) %>%
+  unnest(segment, .drop = FALSE) %>%
+  group_by(route, id) %>%
+  mutate(
+    volgorde = ifelse(omkeren, -1, 1) * row_number()
+  ) %>%
+  arrange(route, id, volgorde) %>%
+  group_by(route) %>%
+  do(
+    lijn = select(., x = X1, y = X2) %>%
+      as.data.frame() %>%
+      Line() %>%
+      list()
+  ) %>%
+  rowwise() %>%
+  mutate(
+    lijn = Lines(lijn, route) %>% 
+      list() %>%
+      SpatialLines(CRS("+proj=longlat +ellps=WGS84")) %>%
+      list()
+  )
+infopunt <- readOGR(
+  "https://raw.githubusercontent.com/emarginatus/batbike/master/route/infopunt.geojson", 
+  "OGRGeoJSON", 
+  verbose = FALSE
+)
+object <- readOGR(
+  "https://raw.githubusercontent.com/emarginatus/batbike/master/route/object.geojson", 
+  "OGRGeoJSON", 
+  verbose = FALSE
+)
+object$verblijf <- ifelse(
+  object$vleermuis == 0,
+  0,
+  ifelse(object$winter == 1, 1, 2)
+) %>%
+  factor(
+    levels = 0:2, 
+    labels = c("geen vleermuizen", "winterverblijf", "zomerverblijf")
+  )
+transport <- readOGR(
+  "https://raw.githubusercontent.com/emarginatus/batbike/master/route/transport.geojson", 
+  "OGRGeoJSON", 
+  verbose = FALSE
+) %>%
+  subset(categorie %in% c("parking", "station"))
+```
+
+```{r stijlen}
+object_icoon <- awesomeIconList(
+  "geen vleermuizen" = makeAwesomeIcon(icon = "building-o", library = "fa"),
+  winterverblijf = makeAwesomeIcon(icon = "building", library = "fa", markerColor = "green"),
+  zomerverblijf = makeAwesomeIcon(icon = "building", library = "fa", markerColor = "pink")
+)
+infopunt_icoon <- makeAwesomeIcon(icon = "info", library = "fa", markerColor = "red")
+transport_icoon <- awesomeIconList(
+  "parking" = makeAwesomeIcon(icon = "car", library = "fa", markerColor = "blue"),
+  "station" = makeAwesomeIcon(icon = "train", library = "fa", markerColor = "blue")
+)
+```
+
+```{r detailkaart, out.width="100%", out.height="600px"}
+leaflet() %>%
+  addTiles(
+    paste0(
+      "https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=", 
+      Sys.getenv("OCM_API")
+    )
+  ) %>%
+  addPolylines(
+    data = basis$lijn[basis$route == "Aanbevolen"][[1]],
+    color = "blue",
+    group = "aanbevolen"
+  ) %>%
+  addAwesomeMarkers(
+    data = transport, 
+    icon = ~transport_icoon[categorie],
+    label = ~id,
+    group = "transport"
+  ) %>%
+  addAwesomeMarkers(
+    data = infopunt, 
+    icon = infopunt_icoon, 
+    group = "infopunt"
+  ) %>%
+  addAwesomeMarkers(
+    data = object, 
+    icon = ~object_icoon[verblijf], 
+    label = ~naam,
+    group = "object"
+  ) %>%
+  addScaleBar(options = scaleBarOptions(maxWidth = 100, imperial = FALSE))
+```
 
 
 ## Feestelijke opening
